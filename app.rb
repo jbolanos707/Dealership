@@ -49,3 +49,10 @@ post('/vehicles') do
   @dealership.add_vehicle(@vehicle)
   erb(:success)
 end
+
+get('/success') do
+  name = params.fetch("name")
+  new_name = Dealership.new(name)
+  new_name.save()
+  erb(:success)
+end
